@@ -73,6 +73,8 @@ def index():
 def search():
     word = request.form['word']
     result = SearchSimilarWords(word)
+    if result is None:
+        return render_template('index.html', word=word, result="「%s」は、Wordnetに存在しない単語です。" % word)
     return render_template('result.html', word=word, result=result)
 
 if __name__ == '__main__':

@@ -6,7 +6,6 @@
 <body>
     <h1>Search Result</h1>
     <p>You searched for: {{ word }}</p>
-    
     {% for concept in result %}
         <h2>{{ concept[0] }}つめの概念: {{ concept[1] }}</h2>
         <p>意味1: {{ concept[2] }}</p>
